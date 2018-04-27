@@ -1,0 +1,7 @@
+package com.yoryo.assignment.service.impl;
+
+import com.yoryo.assignment.service.TrackingService;
+
+public class TrackingServiceImpl implements TrackingService{
+
+}

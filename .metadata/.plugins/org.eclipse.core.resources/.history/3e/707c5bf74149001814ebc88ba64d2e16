@@ -1,0 +1,44 @@
+package com.yoryo.assignment.atmosphere;
+
+import org.atmosphere.cpr.MetaBroadcaster;
+
+import com.pmbsapp.dto.subscription.CalendarDTO;
+import com.pmbsapp.utils.PMBSIDsUtils;
+import com.yoryo.assignment.constants.PMBSNotificationConstants;
+import com.yoryo.assignment.util.JsonConverter;
+
+/**
+ * @author Sagar
+ *
+ */
+public class PMBSnotificationHelper {
+
+	public static void broadcastNotification(PMBSNotification notification) {
+		String roomURL = PMBSNotificationConstants.NOTIFICATION_URL + notification.getRoom();
+		String message = JsonConverter.createJson(notification);
+		MetaBroadcaster.getDefault().broadcastTo(roomURL, message);
+	}
+
+	public static void broadcastHeartbeatNotification() {
+		for (String subsID : PMBSNotificationConstants.CURRENT_CHAT_ROOMS.keySet()) {
+			PMBSNotification notification = new PMBSNotification();
+			notification.setType("HeartBeat");
+			notification.setData("Stay Awake...");
+			String roomURL = PMBSNotificationConstants.NOTIFICATION_URL + subsID;
+			String message = JsonConverter.createJson(notification);
+			MetaBroadcaster.getDefault().broadcastTo(roomURL, message);
+		}
+	}
+
+	public static void sendNotification(String userID, String dataString, String notificationType,
+			String notificationToken) {
+		PMBSNotification notification = new PMBSNotification();
+		notification.setAuthor(userID);
+		notification.setData(dataString);
+		// notification.setRoom();
+		notification.setType(notificationType);
+		notification.setNotificationToken(notificationToken);
+		PMBSnotificationHelper.broadcastNotification(notification);
+	}
+
+}

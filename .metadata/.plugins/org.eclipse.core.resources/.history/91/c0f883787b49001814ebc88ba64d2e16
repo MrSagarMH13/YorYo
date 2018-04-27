@@ -1,0 +1,8 @@
+package com.yoryo.assignment.fcm;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PushNotificationsService {
+
+}

@@ -1,0 +1,21 @@
+package com.yoryo.assignment.scheduler;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.GsonJsonParser;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import com.yoryo.assignment.fcm.NotificationHelper;
+
+@Component
+public class TaskScheduler {
+
+	@Autowired
+	NotificationHelper notificationHelper;
+
+	@Scheduled(initialDelay = 1000, fixedRate = 60000)
+	public void run() {
+		GsonJsonParser gsonJsonParser = new G
+		System.out.println(notificationHelper.updateLocation());
+	}
+}

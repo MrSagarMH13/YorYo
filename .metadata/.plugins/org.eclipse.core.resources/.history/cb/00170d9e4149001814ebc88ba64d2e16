@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.yoryo.assignment.constants;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ *
+ * @author Govind
+ */
+public interface PMBSNotificationConstants {
+
+    public final static String NOTIFICATION_URL = "/notification/";
+    public final static String SERVER = "SERVER";
+    public final static String NOTIFICATION_NEW_APPOINTMENT = "NewAppointment";
+    public final static String NOTIFICATION_UPDATE_APPOINTMENT = "UpdateAppointment";
+    public final static String NOTIFICATION_APPOINTMENT_STATUS = "AppointmentStatus";
+    public final static String NOTIFICATION_ISSUE_RESPONSE = "NewIssueResponse";
+    public final static String NOTIFICATION_OFFLINE_APPOINTMENT = "OfflineAppointment";
+    public final static String NOTIFICATION_APPOINTMENT_STATUS_BY_PATIENT = "AppointmentStatusByPatient";
+    public final static String NOTIFICATION_APPOINTMNET_REQUEST = "NewAppointmentRequest";
+    public final static String NOTIFICATION_ORTHO_APPOINTMENT_REQUEST = "NewOrthoAppointmentRequest";
+
+    public final static String NOTIFICATION_GIVEN_LAB_TASK = "LabTaskGiven";
+    public final static String NOTIFICATION_RECEIVED_LAB_TASK = "LabTaskReceived";
+
+    public final static String NOTIFICATION_NEW_DOCTOR = "DoctorStaff";
+
+    public static Map<String, String> CURRENT_CHAT_ROOMS = new HashMap<>();
+}

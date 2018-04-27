@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;gps-vehicle-simulator&apos;&#x0D;&#x0A;- Original project: &apos;gps-vehicle-simulator&apos;&#x0D;&#x0A;- Original element: &apos;gps-vehicle-simulator/src/main/java/frk.gpssimulator.frk.gpssimulator&apos;" description="Delete element" element1="/src\/main\/java&lt;frk.gpssimulator.frk.gpssimulator" element2="/src\/main\/java&lt;frk.gpssimulator.frk" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1524832895102" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AtmosphereUtils.java&apos; to &apos;YorYo/src/main/java/com.yoryo.assignment.atmosphere&apos;&#x0D;&#x0A;- Original project: &apos;spring-mvc-atmosphere-sample&apos;&#x0D;&#x0A;- Destination element: &apos;YorYo/src/main/java/com.yoryo.assignment.atmosphere&apos;&#x0D;&#x0A;- Original element: &apos;org.springframework.mvc.samples.atmosphere.AtmosphereUtils.java&apos;" description="Copy compilation unit" destination="=YorYo/src\/main\/java&lt;com.yoryo.assignment.atmosphere" element1="/src\/main\/java&lt;org.springframework.mvc.samples.atmosphere{AtmosphereUtils.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1524675339703" units="1" version="1.0"/>
+</session>

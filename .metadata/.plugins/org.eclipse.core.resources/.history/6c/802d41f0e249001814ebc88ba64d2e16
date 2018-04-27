@@ -1,0 +1,7 @@
+package com.yoryo.assignment.model;
+
+public class Location {
+	
+	String lat;
+
+}

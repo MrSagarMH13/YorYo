@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+   <head>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.11&sensor=false" type="text/javascript"></script>
+      
+		
+   </head>
+   
+   <body>
+      <div id = "sse">
+         <h3>YorYo Tracking</h3>
+      </div>
+      <script type = "text/javascript">
+	  
+	     var options = {}, map = "";
+         function WebSocketTest() {
+            
+            if ("WebSocket" in window) {
+               alert("WebSocket is supported by your Browser!");
+               
+               // Let us open a web socket
+               var ws = new WebSocket("http://localhost:8080//track/parcel");
+				
+               ws.onopen = function() {
+                  
+                  // Web Socket is connected, send data using send()
+                  ws.send("Message to send");
+                  alert("Message is sent...");
+               };
+				
+               ws.onmessage = function (evt) { 
+                  alert("Message is received...");
+				  var markers = [];
+				  if(localstorage.getItem("MARKERS")!=null){
+				    markers = JSON.parse(localstorage.getItem("MARKERS"));
+				  }else{
+				     options = {
+						zoom: 5,
+						center: new google.maps.LatLng(evt.lat,evt.lang), // centered US
+						mapTypeId: google.maps.MapTypeId.TERRAIN,
+						mapTypeControl: false
+					};
+					map = new google.maps.Map(document.getElementById('map_canvas'), options);
+				  }
+				  markers.push({lat:evt.lat, lang:evt.lang});
+				  localstorage.setItem("MARKERS",JSON.stringify(markers));
+				  placeMarkers(markers);
+				  
+               };
+				
+               ws.onclose = function() { 
+                  
+                  // websocket is closed.
+                  alert("Connection is closed..."); 
+               };
+            } else {
+              
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+		 
+		 $(document).ready(function() {
+			options = {
+				zoom: 5,
+				center: new google.maps.LatLng(39.909736, -98.522109), // centered US
+				mapTypeId: google.maps.MapTypeId.TERRAIN,
+				mapTypeControl: false
+			};
+
+			// init map
+			map = new google.maps.Map(document.getElementById('map_canvas'), options);
+			
+		    WebSocketTest();	
+		
+			function placeMarkers(markers){
+			   for (var i = 0; i < markers.length; i++) {
+                    // init markers
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(markers[i].lat,markers[i].lang),
+                        map: map,
+                        title: 'Marker ' + i
+                    });
+                }
+				
+			}
+			
+		  });	
+      </script>
+	  
+	  <div id="map_canvas" style="width: 1000px; height:600px;"></div>
+   </body>
+</html>

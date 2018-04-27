@@ -1,0 +1,32 @@
+package com.yoryo.assignment.controller;
+
+import org.atmosphere.cpr.ApplicationConfig;
+import org.atmosphere.cpr.AtmosphereResource;
+import org.atmosphere.cpr.Broadcaster;
+import org.atmosphere.cpr.BroadcasterFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@RequestMapping(value = "/user-notifications/{userId}")
+@ResponseStatus(HttpStatus.OK)
+@ResponseBody
+public class SocketController {
+
+	public void watch(@PathVariable("userId") String userId,
+            HttpServletRequest request) throws Exception {
+//Atmosphere framework puts filter/servlet that adds ATMOSPHERE_RESOURCE to all requests
+AtmosphereResource resource = (AtmosphereResource)request.getAttribute(ApplicationConfig.ATMOSPHERE_RESOURCE);
+
+//suspending resource to keep connection
+resource.suspend();
+
+//find broadcaster, second parameter says to create broadcaster if it doesn't exist
+Broadcaster broadcaster = BroadcasterFactory.getDefault().lookup(userId,true);
+
+//saving resource for notifications
+broadcaster.addAtmosphereResource(resource);
+}
+}

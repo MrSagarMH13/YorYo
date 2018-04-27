@@ -1,0 +1,8 @@
+package com.yoryo.assignment.fcm;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class NotificationHelper {
+
+}

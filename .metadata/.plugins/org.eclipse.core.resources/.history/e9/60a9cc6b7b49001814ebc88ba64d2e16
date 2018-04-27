@@ -1,0 +1,5 @@
+package com.yoryo.assignment.fcm;
+
+public class AndroidPushNotificationsService {
+
+}

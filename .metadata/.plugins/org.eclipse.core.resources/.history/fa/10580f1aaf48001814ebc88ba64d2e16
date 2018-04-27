@@ -1,0 +1,8 @@
+package com.yoryo.assignment.controller;
+
+@RequestMapping(value = "/user-notifications/{userId}")
+@ResponseStatus(HttpStatus.OK)
+@ResponseBody
+public class SocketController {
+
+}

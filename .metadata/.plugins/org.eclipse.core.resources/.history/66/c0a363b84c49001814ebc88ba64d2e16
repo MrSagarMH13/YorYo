@@ -1,0 +1,5 @@
+package net.andreaskluth.toastonatmosphere.configuration;
+
+public class SecurityConfiguration {
+
+}

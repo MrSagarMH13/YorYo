@@ -1,0 +1,6 @@
+package com.yoryo.assignment.fcm;
+
+@Service
+public class PushNotificationsService {
+
+}
