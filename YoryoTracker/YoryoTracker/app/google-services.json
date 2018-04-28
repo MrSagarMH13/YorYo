@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "137620868850",
+    "firebase_url": "https://yoryo-tracker.firebaseio.com",
+    "project_id": "yoryo-tracker",
+    "storage_bucket": "yoryo-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137620868850:android:032651f754604c4d",
+        "android_client_info": {
+          "package_name": "com.yoryo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137620868850-iju7iir5idaivgu6cnu28k90ilaid2nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yoryo",
+            "certificate_hash": "723ad46a35919e420a5021311bdf54bfd0d45ef4"
+          }
+        },
+        {
+          "client_id": "137620868850-ilpgoonkpukl2a1rvnbh00sashtdpd1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3e6QsUKee-V1b7bpv9AXfSWFQODHJz2U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137620868850-ilpgoonkpukl2a1rvnbh00sashtdpd1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

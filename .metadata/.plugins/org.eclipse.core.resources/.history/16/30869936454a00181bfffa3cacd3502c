@@ -1,0 +1,38 @@
+package com.yoryo.assignment.scheduler;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import com.google.gson.Gson;
+import com.yoryo.assignment.fcm.NotificationHelper;
+import com.yoryo.assignment.model.Location;
+
+@Component
+public class TaskScheduler {
+
+	@Autowired
+	NotificationHelper notificationHelper;
+
+	int i = 1;
+
+	@Scheduled(initialDelay = 1000, fixedRate = 10000) // 60000
+	public void run() {
+		Gson gson = new Gson();
+		if (i % 2 == 0) {
+			Location location = new Location();
+			location.setLat("20.593684");
+			location.setLang("78.962880");
+			System.out.println(location.toString());
+			System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+		} else {
+			Location location = new Location();
+			location.setLat("20.593684");
+			location.setLang("78.96288");
+			System.out.println(location.toString());
+			System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+		}
+
+		i++;
+	}
+}

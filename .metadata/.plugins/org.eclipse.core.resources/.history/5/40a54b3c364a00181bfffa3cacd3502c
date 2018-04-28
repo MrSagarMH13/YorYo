@@ -1,0 +1,5 @@
+package com.yoryo.assignment.entity;
+
+public class Location {
+
+}

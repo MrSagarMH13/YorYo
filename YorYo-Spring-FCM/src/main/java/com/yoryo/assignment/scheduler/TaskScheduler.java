@@ -14,12 +14,86 @@ public class TaskScheduler {
 	@Autowired
 	NotificationHelper notificationHelper;
 
-	@Scheduled(initialDelay = 1000, fixedRate = 10000)//60000
+	public static int i = 1;
+
+	@Scheduled(initialDelay = 1000, fixedRate = 10000) // 60000
 	public void run() {
-		Location location = new Location();
-		location.setLat("34.34434");
-		location.setLang("3434343.43434");
 		Gson gson = new Gson();
-		System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+		if (i <= 12) {
+			if (i == 1) {
+				Location location = new Location();
+				location.setLat("18.6444781");
+				location.setLang("73.7645901");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 2) {
+				Location location = new Location();
+				location.setLat("18.6456628");
+				location.setLang("73.764998");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 3) {
+				Location location = new Location();
+				location.setLat("18.644722"); // 18.644722, 73.765803
+				location.setLang("73.765803");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 4) {
+				Location location = new Location();
+				location.setLat("18.645841"); // 18.645841, 73.766511
+				location.setLang("73.766511");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 5) {
+				Location location = new Location();
+				location.setLat("18.646353"); // 18.646353, 73.766192
+				location.setLang("73.766192");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 6) {
+				Location location = new Location();
+				location.setLat("18.647507"); // 18.647507, 73.766516
+				location.setLang("73.766516");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 7) {
+				Location location = new Location();
+				location.setLat("18.648198"); // 18.648198, 73.765712
+				location.setLang("73.765712");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 8) {
+				Location location = new Location();
+				location.setLat("18.648523"); // 18.648523, 73.765357
+				location.setLang("73.765357");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 9) {
+				Location location = new Location();
+				location.setLat("18.650791"); // 18.650791, 73.763099
+				location.setLang("73.763099");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 10) {
+				Location location = new Location();
+				location.setLat("18.653861"); // 18.653861, 73.764694
+				location.setLang("73.764694");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 11) {
+				Location location = new Location();
+				location.setLat("18.657888"); // 18.657888, 73.765299
+				location.setLang("73.765299");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			} else if (i == 12) {
+				Location location = new Location();
+				location.setLat("18.6579138"); // 18.6579138,73.7635504
+				location.setLang("73.7635504");
+				System.out.println(location.toString());
+				System.out.println(notificationHelper.updateLocation(gson.toJson(location)));
+			}
+		}
+		i++;
 	}
 }

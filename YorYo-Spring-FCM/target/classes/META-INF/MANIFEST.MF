@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Implementation-Title: assignment
-Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Title: YorYo
+Implementation-Version: 2.0.0.RELEASE
 Built-By: Sagar
 Implementation-Vendor-Id: com.yoryo
 Build-Jdk: 1.8.0_171
